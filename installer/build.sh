@@ -28,6 +28,12 @@ RAC=$(git rev-parse --show-toplevel)
 # Aller à la racine du dépôt
 cd $RAC || exit 1
 
-sudo systemctl start docker
+git clone https://github.com/dwight-Studio/jArmEmu/ build
+cd build || exit 1
+mvn clean compile package
 
-docker run --rm -i -v "$RAC:/jarmemu" amake/innosetup /V Z:/jarmemu/package/windows/jarmemu.iss
+sudo systemctl start docker
+sudo docker run --rm -i -v "$RAC:/jarmemu" amake/innosetup /V Z:/jarmemu/installer/jarmemu.iss
+
+cd $RAC || exit 1
+rm -rf build

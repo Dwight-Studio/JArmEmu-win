@@ -2,8 +2,8 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "JArmEmu"
-#define MyAppVersion "0.2.0"
-#define MyAppRelease "4"
+#define MyAppVersion "0.2.1"
+#define MyAppRelease "1"
 #define MyAppPublisher "Dwight Studio"
 #define MyAppURL "https://dwightstudio.fr/jarmemu"
 #define MyAppExeName "launcher.exe"
@@ -13,8 +13,8 @@
 
 ; Pour GNU/Linux
 #define RepositoryPath "Z:\jarmemu"
-; Pour Windows
-; #define RepositoryPath "C:\Users\tolle\IdeaProjects\JArmEmu"
+#define TargetPath RepositoryPath + "\build\jarmemu-distribution\target\jarmemu"
+#define DataPath RepositoryPath + "\build\data"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
@@ -33,10 +33,10 @@ ChangesAssociations=yes
 DisableProgramGroupPage=yes
 LicenseFile={#RepositoryPath}\LICENSE
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
-;PrivilegesRequired=lowest
-OutputDir={#RepositoryPath}\target
+PrivilegesRequired=lowest
+OutputDir={#RepositoryPath}\installer
 OutputBaseFilename={#MyAppName}-{#MyAppVersion}-{#MyAppRelease}
-SetupIconFile={#RepositoryPath}\package\windows\favicon.ico
+SetupIconFile={#DataPath}\favicon.ico
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
@@ -73,9 +73,8 @@ Name: "ukrainian"; MessagesFile: "compiler:Languages\Ukrainian.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "{#RepositoryPath}\package\windows\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#RepositoryPath}\target\JArmEmu.jar"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#RepositoryPath}\target\lib\*"; DestDir: "{app}\lib\"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "{#RepositoryPath}\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#TargetPath}\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Registry]
