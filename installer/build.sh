@@ -28,6 +28,7 @@ RAC=$(git rev-parse --show-toplevel)
 # Aller à la racine du dépôt
 cd $RAC || exit 1
 
+# TODO: Use portable archive
 git clone https://github.com/dwight-Studio/jArmEmu/ build
 cd build || exit 1
 mvn clean compile package
