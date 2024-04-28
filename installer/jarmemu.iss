@@ -14,7 +14,7 @@
 ; Pour GNU/Linux
 #define RepositoryPath "Z:\jarmemu"
 #define TargetPath RepositoryPath + "\build\jarmemu-distribution\target\jarmemu"
-#define DataPath RepositoryPath + "\build\data"
+#define ResourcesPath RepositoryPath + "\build\resources"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
@@ -36,7 +36,7 @@ LicenseFile={#RepositoryPath}\LICENSE
 PrivilegesRequired=lowest
 OutputDir={#RepositoryPath}\installer
 OutputBaseFilename={#MyAppName}-{#MyAppVersion}-{#MyAppRelease}
-SetupIconFile={#DataPath}\favicon.ico
+SetupIconFile={#ResourcesPath}\favicon.ico
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
