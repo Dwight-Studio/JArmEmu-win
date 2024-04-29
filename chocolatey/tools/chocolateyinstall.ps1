@@ -1,5 +1,5 @@
 ﻿$ErrorActionPreference = 'Stop'
-$url        = 'https://github.com/Dwight-Studio/JArmEmu/releases/download/v0.1.7/JArmEmu-0.1.7-BETA.exe'
+$url        = 'https://github.com/Dwight-Studio/JArmEmu/releases/download/v0.2.1/JArmEmu-0.2.1.exe'
 
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
@@ -8,7 +8,7 @@ $packageArgs = @{
 
   softwareName  = 'JArmEmu*'
 
-  checksum      = '4A2947A1E5F40808EEA78914E6394A151D76CE62665B2AC6E49E4F1512C270CB'
+  checksum      = '???'
   checksumType  = 'sha256'
 
   silentArgs   = '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-'

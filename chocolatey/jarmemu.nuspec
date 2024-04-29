@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<package xmlns="https://raw.githubusercontent.com/NuGet/NuGet.Client/dev/src/NuGet.Core/NuGet.Packaging/compiler/resources/nuspec.xsd">
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
-    <id>fr.dwightstudio.JArmEmu</id>
-    <version>0.2.1-1</version>
+    <id>jarmemu</id>
+    <version>0.2.1</version>
     <packageSourceUrl>https://github.com/Dwight-Studio/JArmEmu-win/tree/v0.2.1/chocolatey</packageSourceUrl>
     <owners>FoxYinx</owners>
     <title>JArmEmu</title>
@@ -29,6 +29,9 @@
                           [Instructions.md](https://github.com/Dwight-Studio/JArmEmu/blob/main/Instructions.md)) and include GNU Assembly directives (only the basic ones are implemented, you can refer to syntax
                           highlighting or auto-completion to see if it is available).]]></description>
     <releaseNotes>https://github.com/Dwight-Studio/JArmEmu/releases/tag/v0.2.1</releaseNotes>
+    <dependencies>
+        <dependency id='openjdk' />
+    </dependencies>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
