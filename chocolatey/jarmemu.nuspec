@@ -30,7 +30,7 @@
                           highlighting or auto-completion to see if it is available).]]></description>
     <releaseNotes>https://github.com/Dwight-Studio/JArmEmu/releases/tag/v0.2.1</releaseNotes>
     <dependencies>
-        <dependency id='openjdk' />
+        <dependency id='openjdk'/>
     </dependencies>
   </metadata>
   <files>
