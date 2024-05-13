@@ -23,15 +23,17 @@
 #     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
+VERSION=0.2.1
+
 RAC=$(git rev-parse --show-toplevel)
 
 # Aller à la racine du dépôt
 cd $RAC || exit 1
 
-# TODO: Use portable archive
-git clone https://github.com/dwight-Studio/jArmEmu/ build
+mkdir build
 cd build || exit 1
-mvn clean compile package
+wget https://github.com/Dwight-Studio/JArmEmu/releases/download/v0.2.1/JArmEmu-${VERSION}.zip
+unzip JArmEmu-${VERSION}.zip
 
 sudo systemctl start docker
 sudo docker run --rm -i -v "$RAC:/jarmemu" amake/innosetup /V Z:/jarmemu/installer/jarmemu.iss

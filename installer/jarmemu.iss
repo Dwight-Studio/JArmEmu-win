@@ -13,7 +13,7 @@
 
 ; Pour GNU/Linux
 #define RepositoryPath "Z:\jarmemu"
-#define TargetPath RepositoryPath + "\build\jarmemu-distribution\target\jarmemu"
+#define TargetPath RepositoryPath + "\build"
 #define ResourcesPath RepositoryPath + "\build\resources"
 
 [Setup]
@@ -74,7 +74,8 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 
 [Files]
 Source: "{#RepositoryPath}\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#TargetPath}\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "{#TargetPath}\*.jar"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#TargetPath}\lib\*.jar"; DestDir: "{app}\lib\"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Registry]
