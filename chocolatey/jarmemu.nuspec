@@ -3,7 +3,7 @@
   <metadata>
     <id>jarmemu</id>
     <version>0.2.1</version>
-    <packageSourceUrl>https://github.com/Dwight-Studio/JArmEmu-win/tree/v0.2.1/chocolatey</packageSourceUrl>
+    <packageSourceUrl>https://github.com/Dwight-Studio/JArmEmu-win/tree/main/chocolatey</packageSourceUrl>
     <owners>FoxYinx</owners>
     <title>JArmEmu</title>
     <authors>Dwight Studio</authors>
@@ -30,7 +30,7 @@
                           highlighting or auto-completion to see if it is available).]]></description>
     <releaseNotes>https://github.com/Dwight-Studio/JArmEmu/releases/tag/v0.2.1</releaseNotes>
     <dependencies>
-        <dependency id='openjdk'/>
+        <dependency id='openjdk' version="21.0.0"/>
     </dependencies>
   </metadata>
   <files>
